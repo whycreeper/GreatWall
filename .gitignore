@@ -1,9 +1,2 @@
-1.md
-*.out
-*.exe
-*.bin
-*.elf
-*.req
-*.rsp
-PQCgenKAT_sign
-Optimized_Implementation/
+/greatwall384
+/greatwall512
