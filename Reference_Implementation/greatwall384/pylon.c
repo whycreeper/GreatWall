@@ -13,16 +13,7 @@
 // =   10842 10842 10842 ... 10842 1
 // 19 times '10842' and '1'
 // 76 times '10000' and '1'
-void GF_print(const GF x)
-{
-    uint8_t buf[PYLON_NUM_BYTES_FIELD];
-    GF_to_bytes(buf, x);
 
-    printf("GF bytes = ");
-    for (int i = 0; i < PYLON_NUM_BYTES_FIELD; i++)
-        printf("%02x", buf[i]);
-    printf("\n");
-}
 void GF_exp_invmer_e_3(GF out, const GF in)
 {
   GF t1 = {0,};
