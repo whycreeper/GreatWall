@@ -21,7 +21,7 @@ For comparison and benchmarking purposes, we refer to the following implementati
 
 ## Build and Test
 
-'''
+```
 cd Reference_Implementation
 python3 make_clean.py
 python3 test_and_bench.py
@@ -30,11 +30,11 @@ python3 test_and_bench.py
 cd Optimized_Implementation 
 python3 make_clean.py 
 python3 test_and_bench.py 
-'''
+```
 
 ## Repository Structure
 
-
+```
 ├──────── Reference_Implementation/
 │   ├── greatwall128_N16/
 │   ├── greatwall128_N64/
@@ -45,7 +45,9 @@ python3 test_and_bench.py
 │   ├── greatwall192_N256/
 │   ├── greatwall256_N16/
 │   ├── greatwall256_N64/
-│   └── greatwall256_N256/
+│   ├── greatwall256_N256/
+│   ├── greatwall384_N16/
+│   └── greatwall512_N16/
 │
 └──────── Optimized_Implementation/
     ├── greatwall128_N16/
@@ -58,10 +60,10 @@ python3 test_and_bench.py
     ├── greatwall256_N16/
     ├── greatwall256_N64/
     └── greatwall256_N256/
-
+```
 
 - `greatwall{128,192,256}` denote the target security levels.
 - `N ∈ {16, 64, 256, 2048}` denotes the number of parties.
 - `Reference_Implementation` provides a portable reference implementation.
 - `Optimized_Implementation` provides an AVX2-optimized implementation.
-
+- We do not find a hash with security level up to 384/512 bits. Hence, SHAKE256 is used in the simulation implementation for greatwall384 and greatwall512
