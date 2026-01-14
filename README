@@ -1,13 +1,67 @@
-GreatWall
-The signature algorithm GreatWall, based on the code rewriting of AIMer2
-run on linux with gcc11.4.0
+# GreatWall Signature Scheme
+
+This repository provides reference and optimized implementations of **GreatWall**, a post-quantum signature scheme.
+
+## Environment
+
+All code was tested on the following platform:
+
+- **Operating System:** Ubuntu 22.04.5 LTS  
+- **Compiler:** GCC 11.4.0  
+
+The optimized implementation requires support for **AVX2** instructions.
+
+## Related Implementations
+
+For comparison and benchmarking purposes, we refer to the following implementations:
+
+- AIMer: https://aimer-signature.org/  
+- BN++Rain: https://github.com/isec-tugraz/bnpp_helium_signatures/tree/main/bnpp_rain  
+
+
+## Build and Test
+
 '''
 cd Reference_Implementation
 python3 make_clean.py
 python3 test_and_bench.py
 
 
-cd Optimized_Implementation
-python3 make_clean.py
-python3 test_and_bench.py
+cd Optimized_Implementation 
+python3 make_clean.py 
+python3 test_and_bench.py 
 '''
+
+## Repository Structure
+
+
+├──────── Reference_Implementation/
+│   ├── greatwall128_N16/
+│   ├── greatwall128_N64/
+│   ├── greatwall128_N256/
+│   ├── greatwall128_N2048/
+│   ├── greatwall192_N16/
+│   ├── greatwall192_N64/
+│   ├── greatwall192_N256/
+│   ├── greatwall256_N16/
+│   ├── greatwall256_N64/
+│   └── greatwall256_N256/
+│
+└──────── Optimized_Implementation/
+    ├── greatwall128_N16/
+    ├── greatwall128_N64/
+    ├── greatwall128_N256/
+    ├── greatwall128_N2048/
+    ├── greatwall192_N16/
+    ├── greatwall192_N64/
+    ├── greatwall192_N256/
+    ├── greatwall256_N16/
+    ├── greatwall256_N64/
+    └── greatwall256_N256/
+
+
+- `greatwall{128,192,256}` denote the target security levels.
+- `N ∈ {16, 64, 256, 2048}` denotes the number of parties.
+- `Reference_Implementation` provides a portable reference implementation.
+- `Optimized_Implementation` provides an AVX2-optimized implementation.
+
