@@ -34,8 +34,7 @@ static void print_results_double(const char *s, double *t, size_t n)
 #define CPU_MHZ 2419.201
 int main()
 {
-  uint64_t freq = (uint64_t)(CPU_MHZ * 1e6);
-  printf("CPU frequency: %llu Hz\n", (unsigned long long)freq);
+  uint64_t freq = (uint64_t)(CPU_MHZ * 1e6); 
   int i;
   int ret = 0;
 
@@ -59,8 +58,7 @@ int main()
     t[i] = time_end - time_begin;
     t_ms[i] = (double)t[i] * 1000.0 / (double)freq;
   }
-  print_results("greatwall_keypair: ", t, NTESTS);
-  print_results_double("greatwall_keypair (ms)    : ", t_ms, NTESTS);
+  print_results("greatwall_keypair: ", t, NTESTS);//print_results_double("greatwall_keypair (ms)    : ", t_ms, NTESTS);
 
   for(i = 0; i < NTESTS; i++)
   {
@@ -70,8 +68,7 @@ int main()
     t[i] = time_end - time_begin;
     t_ms[i] = (double)t[i] * 1000.0 / (double)freq;
   }
-  print_results("greatwall_sign   : ", t, NTESTS);
-  print_results_double("greatwall_sign (ms)    : ", t_ms, NTESTS);
+  print_results("greatwall_sign   : ", t, NTESTS);//print_results_double("greatwall_sign (ms)    : ", t_ms, NTESTS);
 
   for(i = 0; i < NTESTS; i++)
   {
@@ -81,8 +78,7 @@ int main()
     t[i] = time_end - time_begin;
     t_ms[i] = (double)t[i] * 1000.0 / (double)freq;
   }
-  print_results("greatwall_verify : ", t, NTESTS);
-  print_results_double("greatwall_verify (ms)    : ", t_ms, NTESTS);
+  print_results("greatwall_verify : ", t, NTESTS);//print_results_double("greatwall_verify (ms)    : ", t_ms, NTESTS);
 
   return ret;
 }
